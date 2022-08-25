@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+  <persistence-unit name="stoc-managementPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>models.Tproduse</class>
+    <class>models.Toperatii</class>
+    <class>models.Vtotalioday</class>
+    <class>models.Vcategorii</class>
+    <class>models.Vraportioday</class>
+    <class>models.Vraportiomonth</class>
+    <class>models.Tcalendar</class>
+    <class>models.Vraportstocurimonth</class>
+    <class>models.Vraportstocuriday</class>
+    <class>models.Vraporttotalday</class>
+    <class>models.Vraporttotalmonth</class>
+    <class>models.Traporttotalday</class>
+    <class>models.Vstoctotal</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/stoc-management"/>
+      <property name="javax.persistence.jdbc.password" value="test"/>
+      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+      <property name="javax.persistence.jdbc.user" value="bogdan"/>
+    </properties>
+  </persistence-unit>
+</persistence>

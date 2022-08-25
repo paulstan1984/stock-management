@@ -1,0 +1,2 @@
+SELECT DISTINCT Categorie FROM TProduse
+WHERE Categorie IS NOT NULL

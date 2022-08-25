@@ -1,0 +1,3 @@
+SELECT * 
+FROM TOPERATII 
+WHERE TIP='Intrare'

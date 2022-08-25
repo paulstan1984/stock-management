@@ -1,0 +1,107 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package models;
+
+import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+/**
+ *
+ * @author ioapau
+ */
+@Entity
+@Table(name = "VRAPORTSTOCURIDAY")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "Vraportstocuriday.findAll", query = "SELECT v FROM Vraportstocuriday v"),
+    @NamedQuery(name = "Vraportstocuriday.findByData", query = "SELECT v FROM Vraportstocuriday v WHERE v.data = :data"),
+    @NamedQuery(name = "Vraportstocuriday.findById", query = "SELECT v FROM Vraportstocuriday v WHERE v.id = :id"),
+    @NamedQuery(name = "Vraportstocuriday.findByDenumire", query = "SELECT v FROM Vraportstocuriday v WHERE v.denumire = :denumire"),
+    @NamedQuery(name = "Vraportstocuriday.findByUm", query = "SELECT v FROM Vraportstocuriday v WHERE v.um = :um"),
+    @NamedQuery(name = "Vraportstocuriday.findByCategorie", query = "SELECT v FROM Vraportstocuriday v WHERE v.categorie = :categorie"),
+    @NamedQuery(name = "Vraportstocuriday.findByStoc", query = "SELECT v FROM Vraportstocuriday v WHERE v.stoc = :stoc")})
+public class Vraportstocuriday implements Serializable {
+    private static final long serialVersionUID = 1L;
+    @Id
+    @Column(name = "DATA")
+    @Temporal(TemporalType.DATE)
+    private Date data;
+    @Id
+    @Column(name = "ID")
+    private int id;
+    @Column(name = "DENUMIRE")
+    private String denumire;
+    @Column(name = "UM")
+    private String um;
+    @Column(name = "CATEGORIE")
+    private String categorie;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    @Column(name = "STOC")
+    private Double stoc;
+
+    public Vraportstocuriday() {
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getDenumire() {
+        return denumire;
+    }
+
+    public void setDenumire(String denumire) {
+        this.denumire = denumire;
+    }
+
+    public String getUm() {
+        return um;
+    }
+
+    public void setUm(String um) {
+        this.um = um;
+    }
+
+    public String getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(String categorie) {
+        this.categorie = categorie;
+    }
+
+    public Double getStoc() {
+        return stoc;
+    }
+
+    public void setStoc(Double stoc) {
+        this.stoc = stoc;
+    }
+    
+}
